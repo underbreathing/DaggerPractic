@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "DaggerPractic"
 include(":app")
 include(":core")
+include(":feature:home")
