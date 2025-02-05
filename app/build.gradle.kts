@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.sheverdyaevartem.daggerpractic"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.sheverdyaevartem.daggerpractic"
@@ -37,6 +37,12 @@ android {
 }
 
 dependencies {
+
+    implementation(project(":core"))
+    implementation(project(":feature:home"))
+
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)

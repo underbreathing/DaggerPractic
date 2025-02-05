@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.sheverdyaevartem.core"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 29
@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.json)
 
