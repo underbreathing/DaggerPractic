@@ -1,4 +1,4 @@
-package com.sheverdyaevartem.core.di
+package com.sheverdyaevartem.core.di.network
 
 import com.sheverdyaevartem.core.qualifiers.SecondServer
 import dagger.Module
@@ -8,11 +8,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+class NetworkModule: NetworkProvider {
 
+
+    /*
+    МОжно билдеры здесь предоставлять
+
+     */
     @Singleton
     @Provides
-    fun provideFirstServer(): Retrofit {
+    override fun provideFirstServer(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://fakeService11/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -22,7 +27,7 @@ class NetworkModule {
     @Singleton
     @Provides
     @SecondServer
-    fun provideSecondServer(): Retrofit {
+    override fun provideSecondServer(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://fakeService22/")
             .addConverterFactory(GsonConverterFactory.create())

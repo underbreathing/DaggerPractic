@@ -13,13 +13,13 @@ class ServiceModule {
 
     @FeatureScope
     @Provides
-    fun provideFirstService(firstRetrofit: Retrofit): FirstService { // Без квалификатора
+    fun provideFirstService(firstRetrofit: Retrofit): FirstService {
         return firstRetrofit.create(FirstService::class.java)
     }
 
     @FeatureScope
     @Provides
-    fun provideSecondService(@SecondServer secondRetrofit: Retrofit): SecondService { // С квалификатором @SecondServer
+    fun provideSecondService(@SecondServer secondRetrofit: Retrofit): SecondService {
         return secondRetrofit.create(SecondService::class.java)
     }
 }

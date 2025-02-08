@@ -12,9 +12,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.mainContainer, HomeFragment())
-                .commit()
+            supportFragmentManager.beginTransaction().add(R.id.mainContainer,
+                    HomeFragment().apply {
+                            arguments = HomeFragment.createArgs("SheverdyaevARTEM")
+                        }).commit()
         }
     }
 }
